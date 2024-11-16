@@ -1,0 +1,179 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Using Roboto font */
+    margin: 0;
+    padding: 0; /* Remove default body padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full view height */
+    background-color: #e5e5f7; /* Background color */
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-image: radial-gradient(#444cf7 10%, transparent 10%),
+                      radial-gradient(#444cf7 10%, transparent 10%);
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+}
+
+.card {
+    width: 95%; /* Changed to percentage for responsiveness */
+    max-width: 400px; /* Increased max-width for larger screens */
+    padding: 20px;
+    background: #fff;
+    border: 6px solid #000;
+    box-shadow: 12px 12px 0 #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 17px 17px 0 #000;
+}
+
+.card__title {
+    font-size: 32px; /* Increase font size for the title */
+    font-weight: bold; /* Make title bold */
+    color: #333; /* Darker color for titles */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.card__title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 3px;
+    background-color: #444cf7; /* Use the primary color for underlining */
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.card:hover .card__title::after {
+    transform: translateX(0);
+}
+
+.card__content {
+    font-size: 18px; /* Increase font size for the content */
+    line-height: 1.4;
+    color: #444; /* Slightly lighter text color */
+    margin-bottom: 20px;
+    font-weight: bold; /* Make content bold */
+}
+
+.card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card__form input {
+    padding: 10px;
+    border: 3px solid #000;
+    font-size: 16px; /* Increased font size for inputs */
+    font-family: inherit;
+    transition: transform 0.3s;
+    width: calc(100% - 26px);
+}
+
+.card__form input:focus {
+    outline: none;
+    transform: scale(1.05);
+    background-color: #444cf7; /* Change input background color on focus */
+    color: #ffffff;
+}
+
+.card__button {
+    border: 3px solid #000;
+    background: #444cf7; /* Primary button color */
+    color: #fff;
+    padding: 12px; /* Increased padding for a larger button */
+    font-size: 20px; /* Increase font size for button */
+    font-weight: bold; /* Make button text bold */
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 100%;
+}
+
+.card__button::before {
+    content: "Sure?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-color: #5ad641;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.card__button:hover::before {
+    transform: translateY(0);
+}
+
+.card__button:active {
+    transform: scale(0.95);
+}
+
+#loan-details, 
+#date-selector p {
+    font-size: 18px; /* Increase font size for loan details and future amount text */
+    font-weight: bold; /* Make text bold */
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%; /* Full width on smaller devices */
+    }
+
+    .card__title {
+        font-size: 28px; /* Adjusted font size for smaller screens */
+    }
+
+    .card__button {
+        font-size: 18px; /* Adjusted button size for smaller screens */ 
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(2px, 2px);
+    }
+    25% {
+        transform: translate(-2px, -2px);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+    }
+    75% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(2px, 2px);
+    }
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}
