@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAUTAM UDHARI CHECKER</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="card__title">GAUTAM UDHARI</h1>
+            <div id="loan-details">
+                <p>TO BE PAID: ₹<span id="current-amount">585</span></p>
+            </div>
+            <button id="edit-amount-btn" class="card__button">Edit Loan Amount</button>
+            <div id="date-selector">
+                <label for="future-date">Select Future Date:</label>
+                <input type="date" id="future-date" />
+                <button id="calculate-future-btn" class="card__button">Calculate Future Amount</button>
+                <p>Future Amount: ₹<span id="future-amount">585</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
